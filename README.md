@@ -12,13 +12,9 @@ A modern, responsive weather application built with React that provides real-tim
 - **Detailed Weather Information**: Temperature, humidity, wind speed, and weather descriptions
 - **Visual Weather Icons**: Custom weather condition icons
 
-## 🚀 Demo
 
-[Live Demo](#) - *Add your deployed URL here*
 
-## 📸 Screenshots
 
-*Add screenshots of your app here*
 
 ## 🛠️ Tech Stack
 
