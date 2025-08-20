@@ -1,70 +1,207 @@
-# Getting Started with Create React App
+# Weather Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive weather application built with React that provides real-time weather information for cities worldwide. Features a clean interface with dark/light mode support and dynamic weather backgrounds.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Real-time Weather Data**: Get current weather conditions for any city
+- **City Search with Autocomplete**: Smart suggestions as you type
+- **Dynamic Weather Backgrounds**: Background images change based on weather conditions
+- **Dark/Light Mode**: Toggle between themes with persistent preference
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Detailed Weather Information**: Temperature, humidity, wind speed, and weather descriptions
+- **Visual Weather Icons**: Custom weather condition icons
 
-### `npm start`
+## 🚀 Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Live Demo](#) - *Add your deployed URL here*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📸 Screenshots
 
-### `npm test`
+*Add screenshots of your app here*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+- **Frontend**: React 18.3.1
+- **Styling**: Tailwind CSS
+- **API**: OpenWeatherMap API
+- **HTTP Client**: Axios
+- **Build Tool**: Create React App
+- **Icons**: Custom weather icons
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/weather-search-app.git
+   cd weather-search-app
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Get your OpenWeatherMap API key**
+   - Visit [OpenWeatherMap](https://openweathermap.org/api)
+   - Sign up for a free account
+   - Get your API key from the dashboard
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Configure the API key**
+   - Replace the placeholder API key in `src/App.js` and `src/components/SearchBar.js`
+   ```javascript
+   const API_KEY = "your-actual-api-key-here";
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. **Open your browser**
+   - Navigate to `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎯 Usage
 
-## Learn More
+1. **Search for a city**: Type any city name in the search bar
+2. **Select from suggestions**: Choose from the autocomplete suggestions
+3. **View weather details**: See current temperature, weather conditions, humidity, and wind speed
+4. **Toggle theme**: Click the theme switch button to toggle between dark and light modes
+5. **Enjoy dynamic backgrounds**: Watch the background change based on current weather conditions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🏗️ Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+weather-search-app/
+├── public/
+│   ├── index.html
+│   └── ... (public assets)
+├── src/
+│   ├── components/
+│   │   ├── SearchBar.js      # City search with autocomplete
+│   │   ├── WeatherCard.js    # Weather display component
+│   │   ├── ThemeSwitch.js    # Dark/light mode toggle
+│   │   └── Navbar.js         # App header
+│   ├── assests/
+│   │   ├── background.jpg    # Main background
+│   │   ├── clear.png         # Sunny weather background
+│   │   ├── cloudy.png        # Cloudy weather background
+│   │   ├── rainy.png         # Rainy weather background
+│   │   ├── snow.png          # Snowy weather background
+│   │   └── thunderstorm.png  # Stormy weather background
+│   ├── App.js               # Main application component
+│   ├── App.css              # Application styles
+│   └── index.js             # Application entry point
+├── package.json
+├── tailwind.config.js       # Tailwind CSS configuration
+└── README.md
+```
 
-### Code Splitting
+## 🎨 Components Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### SearchBar Component
+- **Purpose**: Handles city search with real-time suggestions
+- **Features**:
+  - Autocomplete functionality
+  - Debounced API calls
+  - Error handling for invalid cities
 
-### Analyzing the Bundle Size
+### WeatherCard Component
+- **Purpose**: Displays weather information
+- **Features**:
+  - Dynamic background based on weather
+  - Weather condition icons
+  - Temperature, humidity, and wind speed display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### ThemeSwitch Component
+- **Purpose**: Manages dark/light mode
+- **Features**:
+  - Persistent theme preference
+  - Smooth transitions
+  - System preference detection
 
-### Making a Progressive Web App
+## 🌐 API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### OpenWeatherMap API Endpoints Used
 
-### Advanced Configuration
+1. **Current Weather Data**
+   ```
+   GET https://api.openweathermap.org/data/2.5/weather
+   Parameters:
+   - q: City name
+   - units: metric
+   - appid: API key
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. **Geocoding API (for autocomplete)**
+   ```
+   GET http://api.openweathermap.org/geo/1.0/direct
+   Parameters:
+   - q: Search query
+   - limit: 5
+   - appid: API key
+   ```
 
-### Deployment
+## 🚀 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### `npm run build` fails to minify
+## 🧪 Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+```
+
+## 📱 Responsive Design
+
+The application is fully responsive and works on:
+- Desktop computers
+- Tablets
+- Mobile phones (iOS and Android)
+
+## 🎨 Customization
+
+### Adding New Weather Backgrounds
+1. Add new image to `src/assests/`
+2. Import the image in `WeatherCard.js`
+3. Add new case in the switch statement for weather conditions
+
+### Modifying Themes
+- Update Tailwind CSS classes in components
+- Modify color schemes in `tailwind.config.js`
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [OpenWeatherMap](https://openweathermap.org/) for providing the weather API
+- [React](https://reactjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Create React App](https://create-react-app.dev/) for the excellent development setup
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue or contact the maintainers.
+
+---
+
+**Happy coding!** ⛅🌦️🌤️
